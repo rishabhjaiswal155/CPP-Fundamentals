@@ -15,6 +15,13 @@ class Car{
 			color="white";
 			price=300000;
 		}
+		Car(Car &obj){
+			cout<<"----Copy Constructor invoked------"<<endl;
+		   this->modelno=obj.modelno;
+		   this->name=obj.name;
+		   this->color=obj.color;
+		   this->price=obj.price;	
+		}
 		Car(int modelno,string name,string color,double price){
 			cout<<"----paramterize car constructor invoked----"<<endl;
 			this->modelno=modelno;

@@ -39,5 +39,7 @@ int main(){
 		cars[i]->display();
 	}
 	
+	Car c2(c1);
+	c2.display();
 	return 0;
 }
