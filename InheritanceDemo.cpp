@@ -7,12 +7,14 @@ class Employee{
 	protected:
 		double sal;
 	public:
+		Employee(){
+		}
 		Employee(int eid,string ename,double sal){
 			this->eid=eid;
 			this->ename=ename;
 			this->sal=sal;
 		}
-		void calSal(){
+		virtual void calSal(){
 			cout<<"Salary: "<<sal<<endl;
 		}
 		void displayEmp(){
@@ -37,11 +39,21 @@ class Manager:public Employee{
 			
 };
 int main(){
-Employee e(101,"Rishabh",50000);
-e.calSal();
+    Employee e(101,"Rishabh",50000);
+    e.calSal();
 	e.displayEmp();
     Manager m(102,"vishal",50000,"HR",20000);
     m.calSal();
     
+    Employee *emptr=new Manager(109,"Kranthi",90000,"Operations",20000);
+    emptr->calSal();
+    
+    Employee pace[3];
+    pace[0]=e;
+    pace[1]=m;
+    pace[2]=*emptr;
+    for(int i=0;i<3;i++){
+    	pace[i].calSal();
+    }
       return 0;
 }
