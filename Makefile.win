@@ -1,15 +1,15 @@
-# Project: BankApp
+# Project: CustomerApp
 # Makefile created by Dev-C++ 5.5.1
 
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Account.o BankApp.o
-LINKOBJ  = Account.o BankApp.o
+OBJ      = Customer.o TesterCustomer.o
+LINKOBJ  = Customer.o TesterCustomer.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
-BIN      = BankApp.exe
+BIN      = CustomerApp.exe
 CXXFLAGS = $(CXXINCS) 
 CFLAGS   = $(INCS) 
 RM       = rm -f
@@ -24,8 +24,8 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
-Account.o: Account.cpp
-	$(CPP) -c Account.cpp -o Account.o $(CXXFLAGS)
+Customer.o: Customer.cpp
+	$(CPP) -c Customer.cpp -o Customer.o $(CXXFLAGS)
 
-BankApp.o: BankApp.cpp
-	$(CPP) -c BankApp.cpp -o BankApp.o $(CXXFLAGS)
+TesterCustomer.o: TesterCustomer.cpp
+	$(CPP) -c TesterCustomer.cpp -o TesterCustomer.o $(CXXFLAGS)
